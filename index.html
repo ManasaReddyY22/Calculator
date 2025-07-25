@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Calculator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator-container">
+        <div class="calc-header">
+            <span class="calc-title">Calculator</span>
+            <button id="theme-toggle" aria-label="Toggle light/dark mode">🌙</button>
+        </div>
+        <div class="calc-display" id="display">
+            0
+        </div>
+        <div class="calc-buttons">
+            <button class="btn operator" data-value="C">C</button>
+            <button class="btn operator" data-value="←">←</button>
+            <button class="btn operator" data-value="%">%</button>
+            <button class="btn operator" data-value="/">÷</button>
+
+            <button class="btn" data-value="7">7</button>
+            <button class="btn" data-value="8">8</button>
+            <button class="btn" data-value="9">9</button>
+            <button class="btn operator" data-value="*">×</button>
+
+            <button class="btn" data-value="4">4</button>
+            <button class="btn" data-value="5">5</button>
+            <button class="btn" data-value="6">6</button>
+            <button class="btn operator" data-value="-">−</button>
+
+            <button class="btn" data-value="1">1</button>
+            <button class="btn" data-value="2">2</button>
+            <button class="btn" data-value="3">3</button>
+            <button class="btn operator" data-value="+">+</button>
+
+            <button class="btn" data-value="0" style="grid-column: span 2;">0</button>
+            <button class="btn" data-value=".">.</button>
+            <button class="btn equals" data-value="=">=</button>
+        </div>
+        <div class="calc-history" id="history"></div>
+    </div>
+    <audio id="click-sound" src="click.mp3" preload="auto"></audio>
+    <script src="calculator.js"></script>
+</body>
+</html> 

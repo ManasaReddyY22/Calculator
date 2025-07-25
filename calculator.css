@@ -1,0 +1,189 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e0e7ef 0%, #cfd9df 100%);
+    font-family: 'Poppins', sans-serif;
+    transition: background 0.3s;
+}
+
+.calculator-container {
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 2rem 1.5rem 1.5rem 1.5rem;
+    width: 340px;
+    max-width: 95vw;
+    margin: 2rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.12), 0 1.5px 6px rgba(0,0,0,0.08);
+    position: relative;
+    transition: box-shadow 0.3s, background 0.3s;
+}
+
+.calc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.calc-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #222;
+    letter-spacing: 1px;
+}
+
+#theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    outline: none;
+    color: #555;
+    transition: color 0.2s;
+}
+#theme-toggle:hover {
+    color: #111;
+}
+
+.calc-display {
+    background: rgba(255,255,255,0.45);
+    border-radius: 18px;
+    box-shadow: 0 0 8px 2px #aee2ff, 0 1.5px 6px rgba(0,0,0,0.04);
+    padding: 1.2rem 1rem 0.8rem 1rem;
+    font-size: 2.1rem;
+    font-weight: 600;
+    color: #222;
+    text-align: right;
+    margin-bottom: 1.2rem;
+    min-height: 2.5em;
+    border: 2px solid #aee2ff;
+    transition: box-shadow 0.3s, border 0.3s, background 0.3s, color 0.3s;
+    word-break: break-all;
+}
+
+.calc-buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.7rem;
+    margin-bottom: 1.2rem;
+}
+
+.btn {
+    background: rgba(255,255,255,0.7);
+    border: none;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(174,226,255,0.12), 0 1.5px 6px rgba(0,0,0,0.04);
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #222;
+    padding: 0.9rem 0;
+    cursor: pointer;
+    transition: background 0.2s, box-shadow 0.2s, transform 0.1s;
+    outline: none;
+    user-select: none;
+    position: relative;
+}
+
+.btn:active {
+    transform: scale(0.96);
+    box-shadow: 0 1px 4px rgba(174,226,255,0.18);
+}
+
+.btn:hover {
+    background: #e3f2fd;
+}
+
+.btn.operator {
+    background: #e3f0ff;
+    color: #3b82f6;
+    font-weight: 600;
+}
+
+.btn.operator:hover {
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.btn.equals {
+    background: linear-gradient(90deg, #3b82f6 0%, #60a5fa 100%);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 2px 12px #3b82f655;
+}
+
+.btn.equals:hover {
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+}
+
+.calc-history {
+    min-height: 1.5em;
+    font-size: 1rem;
+    color: #888;
+    margin-top: 0.5rem;
+    text-align: right;
+    max-height: 4em;
+    overflow-y: auto;
+    opacity: 0.85;
+}
+
+@media (max-width: 500px) {
+    .calculator-container {
+        width: 98vw;
+        padding: 1.2rem 0.3rem 1rem 0.3rem;
+    }
+    .calc-display {
+        font-size: 1.3rem;
+        padding: 0.7rem 0.5rem 0.5rem 0.5rem;
+    }
+    .btn {
+        font-size: 1rem;
+        padding: 0.7rem 0;
+    }
+}
+
+body.dark {
+    background: linear-gradient(135deg, #232526 0%, #414345 100%);
+}
+
+body.dark .calculator-container {
+    background: rgba(34, 40, 49, 0.7);
+    box-shadow: 0 8px 32px 0 rgba(0,0,0,0.45);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+body.dark .calc-title, body.dark .calc-display, body.dark .btn {
+    color: #f1f5f9;
+}
+body.dark .calc-display {
+    background: rgba(34,40,49,0.7);
+    border: 2px solid #60a5fa;
+    box-shadow: 0 0 8px 2px #60a5fa, 0 1.5px 6px rgba(0,0,0,0.08);
+}
+body.dark .btn {
+    background: rgba(55,65,81,0.7);
+}
+body.dark .btn.operator {
+    background: #1e293b;
+    color: #60a5fa;
+}
+body.dark .btn.equals {
+    background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%);
+    color: #fff;
+}
+body.dark .btn:hover {
+    background: #334155;
+}
+body.dark .btn.operator:hover {
+    background: #1e293b;
+    color: #3b82f6;
+} 
